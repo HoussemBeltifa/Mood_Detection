@@ -4,4 +4,4 @@ streamlit_extras
 torchvision
 torch
 streamlit
-PIL
+Pillow
