@@ -1,5 +1,4 @@
 streamlit-aggrid
-streamlit_extras.let_it_rain
 streamlit_extras
 torchvision
 torch
