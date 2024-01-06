@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mood-app-deployment
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: mood-app
+  template:
+    metadata:
+      labels:
+        app: mood-app
+    spec:
+      containers:
+      - name: mood-app-container
+        image: houssembel/mood:3
+        ports:
+        - containerPort: 80
+  strategy: 
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mood-app-service
+spec:
+  selector:
+    app: mood-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
