@@ -21,6 +21,6 @@ spec:
     spec:
       containers:
       - name: mood
-        image: houssembel/mood:1
+        image: houssembel/mood:3
         ports:
         - containerPort: 90
