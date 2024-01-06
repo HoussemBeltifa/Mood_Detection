@@ -8,5 +8,5 @@ spec:
     app: mood-app
   ports:
     - port: 90
-      targetPort: 90
+      targetPort: 5000
       nodePort: 30008
